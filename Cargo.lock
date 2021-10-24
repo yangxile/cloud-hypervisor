@@ -103,9 +103,9 @@ checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
 
 [[package]]
 name = "backtrace"
-version = "0.3.61"
+version = "0.3.62"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e7a905d892734eea339e896738c14b9afce22b5318f64b951e70bf3844419b01"
+checksum = "091bcdf2da9950f96aa522681ce805e6857f6ca8df73833d35736ab2dc78e152"
 dependencies = [
  "addr2line",
  "cc",
@@ -144,6 +144,7 @@ dependencies = [
  "versionize_derive",
  "vhdx",
  "virtio-bindings",
+ "virtio-queue",
  "vm-memory",
  "vm-virtio",
  "vmm-sys-util",
@@ -418,9 +419,9 @@ dependencies = [
 
 [[package]]
 name = "instant"
-version = "0.1.11"
+version = "0.1.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "716d3d89f35ac6a34fd0eed635395f4c3b76fa889338a4632e5231a8684216bd"
+checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
 dependencies = [
  "cfg-if",
 ]
@@ -479,9 +480,9 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
 
 [[package]]
 name = "libc"
-version = "0.2.103"
+version = "0.2.104"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dd8f7255a17a627354f321ef0055d63b898c6fb27eff628af4d1b66b7331edf6"
+checksum = "7b2f96d100e1cf1929e7719b7edb3b90ab5298072638fccd77be9ce942ecdfce"
 
 [[package]]
 name = "libssh2-sys"
@@ -545,7 +546,7 @@ checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 [[package]]
 name = "micro_http"
 version = "0.1.0"
-source = "git+https://github.com/firecracker-microvm/micro-http?branch=main#36e59a083e76a2449e0f58e4283d201bc72fdf13"
+source = "git+https://github.com/firecracker-microvm/micro-http?branch=main#0a58eb1ece68e326e68365c4297d0a7c08ecd9bc"
 dependencies = [
  "libc",
  "vmm-sys-util",
@@ -607,6 +608,7 @@ dependencies = [
  "versionize",
  "versionize_derive",
  "virtio-bindings",
+ "virtio-queue",
  "vm-memory",
  "vm-virtio",
  "vmm-sys-util",
@@ -614,9 +616,9 @@ dependencies = [
 
 [[package]]
 name = "object"
-version = "0.26.2"
+version = "0.27.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "39f37e50073ccad23b6d09bcb5b263f4e76d3bb6038e4a3c08e52162ffa8abc2"
+checksum = "c821014c18301591b89b843809ef953af9e3df0496c232d5c0611b0a52aac363"
 dependencies = [
  "memchr",
 ]
@@ -1148,7 +1150,7 @@ dependencies = [
 [[package]]
 name = "vfio-ioctls"
 version = "0.1.0"
-source = "git+https://github.com/rust-vmm/vfio-ioctls?branch=main#d51c1fad37be30c20385c55a217e2d90972ea31d"
+source = "git+https://github.com/rust-vmm/vfio-ioctls?branch=main#491a0f89a08e2e4c19b19c1109615505228495f6"
 dependencies = [
  "byteorder",
  "kvm-bindings",
@@ -1212,6 +1214,7 @@ dependencies = [
  "log",
  "vhost",
  "virtio-bindings",
+ "virtio-queue",
  "vm-memory",
  "vm-virtio",
  "vmm-sys-util",
@@ -1285,11 +1288,21 @@ dependencies = [
  "versionize_derive",
  "vhost",
  "virtio-bindings",
+ "virtio-queue",
  "vm-allocator",
  "vm-device",
  "vm-memory",
  "vm-migration",
  "vm-virtio",
+ "vmm-sys-util",
+]
+
+[[package]]
+name = "virtio-queue"
+version = "0.1.0"
+dependencies = [
+ "log",
+ "vm-memory",
  "vmm-sys-util",
 ]
 
@@ -1319,7 +1332,7 @@ dependencies = [
 [[package]]
 name = "vm-fdt"
 version = "0.1.0"
-source = "git+https://github.com/rust-vmm/vm-fdt?branch=main#9c2b252dc19f0e87546e4f7577eaf398f8e3c66a"
+source = "git+https://github.com/rust-vmm/vm-fdt?branch=main#bb53be431b20465f816eb6b2243ba93d14bbf971"
 
 [[package]]
 name = "vm-memory"
@@ -1352,6 +1365,7 @@ version = "0.1.0"
 dependencies = [
  "log",
  "virtio-bindings",
+ "virtio-queue",
  "vm-memory",
 ]
 
@@ -1393,6 +1407,7 @@ dependencies = [
  "vfio_user",
  "vhdx",
  "virtio-devices",
+ "virtio-queue",
  "vm-allocator",
  "vm-device",
  "vm-memory",
